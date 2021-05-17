@@ -1,10 +1,13 @@
 // import 'dart:html';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/src/global/globals.dart';
-import 'package:flutter_application_1/src/screens/Navigation.dart';
-import 'package:flutter_application_1/src/screens/verify.dart';
+import 'package:flutter_application_1/src/screens/pages/Navigation.dart';
+import 'package:flutter_application_1/src/screens/auth/verify.dart';
+// import 'package:flutter_application_1/src/services/auth_service.dart';
+import 'package:flutter_application_1/src/services/firestore_service.dart';
 import 'package:flutter_application_1/src/widgets/ButtonWidget.dart';
 import 'package:flutter_application_1/src/widgets/TextFieldWidget.dart';
 
@@ -16,8 +19,21 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   String _email, _password;
   final auth = FirebaseAuth.instance;
+
   @override
   Widget build(BuildContext context) {
+    // CollectionReference users = FirebaseFirestore.instance.collection('users');
+
+    // Future<void> addUser() {
+    //   // Call the user's CollectionReference to add a new user
+    //   return users
+    //       .add({
+    //         'email': _email, // John Doe
+    //       })
+    //       .then((value) => print("User Added"))
+    //       .catchError((error) => print("Failed to add user: $error"));
+    // }
+
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(30.0),
@@ -41,6 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             TextFieldWidget(
               hintText: "Email",
+              // validator:(val) => val.length < 6 ? "Password must be 6 characters long" : null,
               obscureText: false,
               prefixIconData: Icons.mail_outline,
               onChanged: (value) {
@@ -82,6 +99,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   Navigator.of(context).pushReplacement(
                       MaterialPageRoute(builder: (context) => Navigation()));
                 });
+                User user = auth.currentUser;
+                String userid = user.uid;
+                FirestoreService.uid = userid;
               },
             ),
             SizedBox(
@@ -97,13 +117,13 @@ class _LoginScreenState extends State<LoginScreen> {
                   Navigator.of(context).pushReplacement(
                       MaterialPageRoute(builder: (context) => VerifyScreen()));
                 });
+                User user = auth.currentUser;
+                String userid = user.uid;
+                FirestoreService.uid = userid;
+
+                // addUser();
               },
             ),
-            // Container(
-            //   child: Center(
-            //     child: Image.asset("assets/add.png"),
-            //   ),
-            // ),
           ],
         ),
       ),

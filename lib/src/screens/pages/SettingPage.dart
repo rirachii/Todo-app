@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/src/global/globals.dart';
-import 'package:flutter_application_1/src/screens/Login.dart';
+import 'package:flutter_application_1/src/screens/auth/LoginScreen.dart';
 import 'package:flutter_application_1/src/widgets/ButtonWidget.dart';
 // import 'package:flutter_application_1/src/widgets/TextFieldWidget.dart';
 
@@ -21,7 +21,7 @@ class _SettingPageState extends State<SettingPage> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.only(top: 20, bottom: 50),
+              padding: const EdgeInsets.only(top: 30, bottom: 50),
               child: Row(children: <Widget>[
                 Text(
                   'Settings',

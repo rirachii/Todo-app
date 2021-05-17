@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/src/global/globals.dart';
 // import 'package:flutter_application_1/src/screens/CalendarPage.dart';
-import 'package:flutter_application_1/src/screens/TimerPage.dart';
-import 'package:flutter_application_1/src/screens/TodoPage.dart';
-import 'package:flutter_application_1/src/screens/SettingPage.dart';
+// import 'package:flutter_application_1/src/screens/nuke/TimerPage.dart';
+import 'package:flutter_application_1/src/screens/pages/TaskListPage.dart';
+import 'package:flutter_application_1/src/screens/pages/SettingPage.dart';
 
 class Navigation extends StatefulWidget {
   @override
@@ -11,9 +11,9 @@ class Navigation extends StatefulWidget {
 }
 
 class _NavigationState extends State<Navigation> {
-  int _currentIndex = 1;
+  int _currentIndex = 0;
   final List<Widget> _children = [
-    TodoList(),
+    TaskListPage(),
     // TimerPage(),
     // CalendarPage(),
     SettingPage()

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/src/global/globals.dart';
-import 'package:flutter_application_1/src/screens/Login.dart';
+import 'package:flutter_application_1/src/screens/auth/LoginScreen.dart';
 // import 'package:flutter_application_1/src/screens/Navigation.dart';
 
 class App extends StatelessWidget {
@@ -9,6 +8,11 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'Todos',
       home: LoginScreen(),
+      theme: ThemeData(
+          pageTransitionsTheme: PageTransitionsTheme(builders: {
+        TargetPlatform.android: CupertinoPageTransitionsBuilder(),
+        TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+      })),
     );
   }
 }
