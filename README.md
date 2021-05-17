@@ -1,9 +1,5 @@
 # Todo App
 
-Build in Flutter
+Build in Flutter with Firebase Authication and Firestore
 
-![img_of_map](Screenshot_1619849009.png)
-
-APP TODO-LIST:
-1. Be able to add data to firebase db
-2. Ability to add tasks to list and delete them.
+![img_of_map](assets\demo.png)

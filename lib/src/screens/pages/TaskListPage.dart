@@ -43,7 +43,6 @@ class _TaskListPageState extends State<TaskListPage> {
             left: 16.0,
             right: 16.0,
           ),
-
           child: StreamBuilder<QuerySnapshot>(
             stream: FirestoreService.getTasks(),
             builder: (context, snapshot) {
@@ -78,67 +77,6 @@ class _TaskListPageState extends State<TaskListPage> {
               );
             },
           ),
-
-          // Stack(
-          //   children: [
-          //     Column(
-          //       crossAxisAlignment: CrossAxisAlignment.start,
-          //       children: [
-          //         Expanded(child: FutureBuilder(
-          //                 // initalData: [],
-          //                 // future: (),
-          //                 builder: (context, snapshot) {
-          //           return ListView.builder(
-          //             itemCount: 2,
-          //             itemBuilder: (context, index) {
-          //               return TaskCardWidget(
-          //                 title: "",
-          //                 description: "",
-          //                 percentage: .8,
-          //                 icon: "english",
-          //               );
-          //             },
-          //           );
-          //         })
-          //             // child: ListView(children: [
-          //             //   TaskCardWidget(
-          //             //     title: "English",
-          //             //     description:
-          //             //         "Paper due tommorow night, make some last edit changes",
-          //             //     percentage: .90,
-          //             //     icon: "english",
-          //             //   ),
-          //             //   TaskCardWidget(
-          //             //     title: "Physic HW",
-          //             //     description: "Watch video, then start HW13",
-          //             //     percentage: .6,
-          //             //     icon: "science",
-          //             //   ),
-          //             //   TaskCardWidget(
-          //             //     title: "Linear Algebra Test",
-          //             //     description: "Review notes from chapters 5-6",
-          //             //     percentage: .25,
-          //             //     icon: "calc",
-          //             //   ),
-          //             //   TaskCardWidget(
-          //             //     title: "Finish Objective 5",
-          //             //     description: "Due next Friday",
-          //             //     percentage: .30,
-          //             //     icon: "coding",
-          //             //   ),
-          //             //   TaskCardWidget(
-          //             //     title: "Physic Final",
-          //             //     description: "Review notes from chapters 1-15",
-          //             //     percentage: .0,
-          //             //     icon: "science",
-          //             //   )
-          //             // ]),
-          //             // )
-          //             )
-          //       ],
-          //     ),
-          //   ],
-          // ),
         ),
       ),
     );

@@ -155,10 +155,11 @@ class _AddTaskPageState extends State<AddTaskPage> {
                     (widget.percentage != null
                                 ? widget.percentage * 100
                                 : 0 / 100)
+                            .toInt()
                             .toString() +
                         "%",
                     style: new TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 16.0),
+                        fontWeight: FontWeight.w900, fontSize: 25.0),
                   ),
                   circularStrokeCap: CircularStrokeCap.round,
                   progressColor: Global.Grapefruit,

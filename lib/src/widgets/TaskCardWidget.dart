@@ -37,9 +37,9 @@ class _TaskCardWidgetState extends State<TaskCardWidget> {
         child: Container(
             width: double.infinity,
             padding: EdgeInsets.only(
-              top: 5,
-              bottom: 5,
-              left: 5,
+              top: 9,
+              bottom: 9,
+              left: 9,
               right: 10,
             ),
             decoration: BoxDecoration(
@@ -94,9 +94,9 @@ class _TaskCardWidgetState extends State<TaskCardWidget> {
                   animation: true,
                   percent: widget.percentage,
                   center: new Text(
-                    (widget.percentage * 100).toString() + "%",
+                    (widget.percentage * 100).toInt().toString() + "%",
                     style: new TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 16.0),
+                        fontWeight: FontWeight.bold, fontSize: 18.0),
                   ),
                   circularStrokeCap: CircularStrokeCap.round,
                   progressColor: Global.Grapefruit,
